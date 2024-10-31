@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('../src/assets/fonts/static/WorkSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('../src/assets/fonts/static/WorkSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('../src/assets/fonts/static/WorkSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    background: linear-gradient(to top, hsl(275, 100%, 97%) 0%, hsl(275, 100%, 97%) 70%, transparent 70%, transparent 100%), url(../src/assets/images/background-pattern-mobile.svg);
+    background-position: top center;
+    background-size: 100%, 50rem;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+@media (min-width: 460px) {
+    body {
+        background: linear-gradient(to top, hsl(275, 100%, 97%) 0%, hsl(275, 100%, 97%) 60%, transparent 60%, transparent 100%), url(../src/assets/images/background-pattern-desktop.svg);
+    }
+}
+.contenedor {
+    max-width: 700px;
+    width: 90%;
+}
+h2 {
+    max-width: 80%;
+}
+@media (min-width: 768px) {
+    h2 {
+        width: 100%;
+    }
+}
+.respuesta {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Desplazamiento hacia abajo */
+    display: none;
+    transition: opacity 0.5s ease, height 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+.visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0);
+    display: block; /* Asegúrate de que se muestre */
+}
